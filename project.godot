@@ -18,6 +18,13 @@ config/name="mirrors"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="platform"
+2d_physics/layer_3="item"
+2d_physics/layer_4="trap"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

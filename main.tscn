@@ -13,11 +13,11 @@ extents = Vector2( 72.1595, 29.0382 )
 position = Vector2( -4.54419, 9.08832 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 204.213, 329.035 )
+position = Vector2( 203.544, 293.912 )
 
 [node name="Character2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 203.544, 391.912 )
-rotation = 3.14159
+position = Vector2( 202.544, 418.912 )
+scale = Vector2( 1, -1 )
 gravity = -500.0
 moveY = 500.0
 

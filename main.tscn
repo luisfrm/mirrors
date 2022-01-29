@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Characters/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -16,7 +16,7 @@ position = Vector2( -4.54419, 9.08832 )
 position = Vector2( 204.213, 329.035 )
 
 [node name="Character2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 209.186, 385.69 )
+position = Vector2( 203.544, 391.912 )
 rotation = 3.14159
 gravity = -500.0
 moveY = 500.0
@@ -64,4 +64,3 @@ shape = SubResource( 2 )
 position = Vector2( 511.217, 281.737 )
 rotating = true
 current = true
-

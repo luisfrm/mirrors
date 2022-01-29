@@ -40,3 +40,8 @@ func _physics_process(delta):
 func add_coin():
 	coins += 1
 	print("Coins:", coins)
+
+func die():
+	$AnimationPlayer.play("die")
+	yield(get_node("AnimationPlayer"), "animation_finished")
+	get_tree().reload_current_scene()

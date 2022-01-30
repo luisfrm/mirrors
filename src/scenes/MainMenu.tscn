@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/Orbitron-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/scenes/PlayButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/items/arrow_button.jpg" type="Texture" id=3]
 [ext_resource path="res://src/scenes/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/Ninja Frog/Run (32x32).png" type="Texture" id=5]
+[ext_resource path="res://new_atlastexture.tres" type="Texture" id=6]
+[ext_resource path="res://src/scenes/PlayerTest.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -36,7 +39,72 @@ bg_color = Color( 1, 1, 1, 1 )
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 1, 1, 1, 1 )
 
-[node name="Control" type="Control"]
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 320, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 352, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ ExtResource( 6 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=22]
+
+[node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -65,10 +133,10 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 608.0
-margin_top = 384.0
-margin_right = 864.0
-margin_bottom = 448.0
+margin_left = 553.0
+margin_top = 331.0
+margin_right = 809.0
+margin_bottom = 395.0
 custom_colors/font_color_hover = Color( 0.298039, 0.141176, 0.141176, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "PLAY!"
@@ -119,6 +187,22 @@ texture = ExtResource( 3 )
 position = Vector2( 346, 389 )
 scale = Vector2( -0.3, 0.182 )
 texture = ExtResource( 3 )
+
+[node name="PlayerTest" type="KinematicBody2D" parent="."]
+position = Vector2( 512, 521 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PlayerTest"]
+scale = Vector2( 2.375, 2.5625 )
+frames = SubResource( 21 )
+frame = 9
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTest"]
+shape = SubResource( 22 )
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed" flags=6]
 [connection signal="pressed" from="PlayButton2" to="PlayButton2" method="_on_PlayButton_pressed" flags=6]

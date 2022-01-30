@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var _animated_sprite = $AnimatedSprite
+onready var GAME_OVER = preload("res://src/scenes/Game_Over.tscn")
 
 var isDead = false
 export var isQuiet = false
@@ -58,4 +59,5 @@ func die():
 	run_velocity = 0
 	jump_speed = 0
 	yield(get_node("AnimationPlayer"), "animation_finished")
-	get_tree().reload_current_scene()
+	var gameOver = GAME_OVER.instance()
+	get_parent().add_child(gameOver)

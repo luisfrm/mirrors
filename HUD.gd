@@ -4,7 +4,7 @@ var coins = 0
 export var coins_to_win = 10
 onready var Coins = $Coins
 
-onready var LEVEL_FINISHED = preload("res://src/scenes/level_finished.tscn")
+onready var LEVEL_FINISHED = preload("res://src/scenes/Level_finished.tscn")
 
 func _ready():
 	update_coins()
@@ -24,9 +24,8 @@ func _on_coin_collected():
 		if (get_parent().get_node("Enemy2")):
 			get_parent().get_node("Enemy2").isQuiet = true
 		var levelFinished = LEVEL_FINISHED.instance()
-		levelFinished.levelName = "level_2.tscn"
+		levelFinished.levelName = "Level_2.tscn"
 		get_parent().add_child(levelFinished)
 
 func update_coins():
-	print("TEST")
 	Coins.text = String(coins)

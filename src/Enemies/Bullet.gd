@@ -21,6 +21,6 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_attack_body_entered(body):
-	if (body == get_parent().get_node("character")):
+	if (body == get_parent().get_node("Character")):
 		body.die()
 	

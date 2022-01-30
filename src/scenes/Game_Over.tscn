@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/Orbitron-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/scenes/Game_Over.gd" type="Script" id=2]
+
+[sub_resource type="Theme" id=7]
+
+[sub_resource type="Theme" id=8]
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://assets/Orbitron-Black.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+use_filter = true
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Game_Over" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 301.0
+margin_top = 208.0
+margin_right = 767.0
+margin_bottom = 379.0
+theme = SubResource( 7 )
+color = Color( 0.223529, 0.415686, 0.831373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 442.0
+margin_top = 237.0
+margin_right = 637.0
+margin_bottom = 282.0
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "You're dead!
+You can try again!"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tryAgain_Button" type="Button" parent="."]
+margin_left = 316.0
+margin_top = 312.0
+margin_right = 756.0
+margin_bottom = 358.0
+custom_colors/font_color_hover = Color( 0.298039, 0.141176, 0.141176, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Try again!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="tryAgain_Button" to="." method="_on_tryAgain_Button_pressed"]

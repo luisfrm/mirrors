@@ -140,9 +140,26 @@ position = Vector2( 784.456, 215.088 )
 collision_layer = 8
 collision_mask = 2
 
+[node name="Coin7" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 352.456, 264.088 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 683.456, 115.088 )
+collision_layer = 8
+collision_mask = 2
+
 [node name="Coin4" parent="Coins" instance=ExtResource( 5 )]
 modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
 position = Vector2( 501.456, 432.088 )
+scale = Vector2( 1, -1 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 5 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 639.456, 319.088 )
 scale = Vector2( 1, -1 )
 collision_layer = 8
 collision_mask = 2
@@ -166,13 +183,13 @@ curve = SubResource( 4 )
 position = Vector2( 335, 172 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
-tile_data = PoolIntArray( -65543, 23, 0, -65541, 24, 0, -65532, 18, 0, -65531, 19, 0, -65530, 20, 0, -65529, 21, 0, 65529, 0, 0, 65530, 1, 0, 65531, 2, 0, 65532, 3, 0, 4, 4, 0, 5, 14, 0, 6, 14, 0, 7, 9, 0, 65537, 22, 0, 65540, 5, 0, 65541, 14, 0, 65542, 14, 0, 65543, 8, 0, 65546, 22, 0, 131076, 6, 0, 131077, 13, 0, 131078, 12, 0, 131079, 7, 0 )
+tile_data = PoolIntArray( -65543, 25, 0, -65540, 26, 0, -6, 27, 0, -65532, 18, 0, -65531, 19, 0, -65530, 20, 0, -65529, 21, 0, 65529, 0, 0, 65530, 1, 0, 65531, 2, 0, 65532, 3, 0, 4, 4, 0, 5, 14, 0, 6, 14, 0, 7, 9, 0, 131065, 28, 0, 65537, 22, 0, 65539, 26, 0, 65540, 5, 0, 65541, 14, 0, 65542, 14, 0, 65543, 8, 0, 65546, 22, 0, 131076, 6, 0, 131077, 13, 0, 131078, 12, 0, 131079, 7, 0, 131082, 27, 0 )
 
 [node name="TileSwamp" parent="." instance=ExtResource( 8 )]
 position = Vector2( 335, 164 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
-tile_data = PoolIntArray( 327681, 4, 0, 327690, 4, 0, 458745, 0, 0, 458746, 1, 0, 458747, 2, 0, 458748, 3, 0 )
+tile_data = PoolIntArray( 262145, 6, 0, 327681, 5, 0, 327690, 4, 0, 458745, 0, 0, 458746, 1, 0, 458747, 2, 0, 458748, 3, 0 )
 
 [node name="wall" type="StaticBody2D" parent="."]
 collision_mask = 0
@@ -200,5 +217,8 @@ scale = Vector2( 0.8, 1 )
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin7" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin6" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin4" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin8" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin5" to="HUD" method="_on_coin_collected" flags=6]

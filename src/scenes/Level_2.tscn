@@ -31,16 +31,16 @@ font_data = ExtResource( 7 )
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 11 )
 
-[sub_resource type="Curve2D" id=6]
-_data = {
-"points": PoolVector2Array(  )
-}
-
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 10, 319 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 522.5, 10 )
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array(  )
+}
 
 [node name="level_2" type="Node2D"]
 
@@ -139,11 +139,6 @@ position = Vector2( 931.456, 174.088 )
 collision_layer = 8
 collision_mask = 2
 
-[node name="Coin9" parent="Coins" instance=ExtResource( 3 )]
-position = Vector2( 716.456, 130.088 )
-collision_layer = 8
-collision_mask = 2
-
 [node name="Coin2" parent="Coins" instance=ExtResource( 3 )]
 position = Vector2( 120.456, 78.0883 )
 collision_layer = 8
@@ -154,8 +149,17 @@ position = Vector2( 225.456, 47.0883 )
 collision_layer = 8
 collision_mask = 2
 
-[node name="Coin7" parent="Coins" instance=ExtResource( 3 )]
-position = Vector2( 154.456, 80.0883 )
+[node name="Coin4" parent="Coins" instance=ExtResource( 3 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 862.456, 381.088 )
+scale = Vector2( 1, -1 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 3 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 774.456, 471.088 )
+scale = Vector2( 1, -1 )
 collision_layer = 8
 collision_mask = 2
 
@@ -164,53 +168,41 @@ position = Vector2( 187.456, 65.0883 )
 collision_layer = 8
 collision_mask = 2
 
-[node name="Coin4" parent="Coins" instance=ExtResource( 3 )]
-modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
-position = Vector2( 50.4558, 526.088 )
-scale = Vector2( 1, -1 )
+[node name="Coin7" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 154.456, 80.0883 )
 collision_layer = 8
 collision_mask = 2
 
 [node name="Coin8" parent="Coins" instance=ExtResource( 3 )]
 modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
-position = Vector2( 90.4558, 538.088 )
+position = Vector2( 699.456, 322.088 )
 scale = Vector2( 1, -1 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 716.456, 130.088 )
 collision_layer = 8
 collision_mask = 2
 
 [node name="Coin10" parent="Coins" instance=ExtResource( 3 )]
 modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
-position = Vector2( 136.456, 541.088 )
+position = Vector2( 670.456, 480.088 )
 scale = Vector2( 1, -1 )
 collision_layer = 8
 collision_mask = 2
-
-[node name="Coin5" parent="Coins" instance=ExtResource( 3 )]
-modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
-position = Vector2( 11.4558, 494.088 )
-scale = Vector2( 1, -1 )
-collision_layer = 8
-collision_mask = 2
-
-[node name="Enemy1" parent="." instance=ExtResource( 4 )]
-modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
-position = Vector2( 260, 308 )
-scale = Vector2( -1, -1 )
-
-[node name="Path2D" type="Path2D" parent="Enemy1"]
-curve = SubResource( 6 )
 
 [node name="TileMap" parent="." instance=ExtResource( 10 )]
 position = Vector2( 335, 172 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
-tile_data = PoolIntArray( -393207, 24, 0, -327662, 26, 0, -262136, 0, 0, -262135, 2, 0, -262134, 1, 0, -262133, 2, 0, -262132, 3, 0, -196600, 28, 0, -196598, 29, 0, -196591, 0, 0, -196590, 3, 0, -131055, 30, 0, -65525, 0, 0, -65524, 1, 0, -65523, 3, 0, 6, 18, 0, 7, 21, 0, 11, 28, 0, 16, 27, 0, 65539, 22, 0, 65542, 4, 0, 65543, 10, 0, 65552, 0, 0, 65553, 3, 0, 131078, 6, 0, 131079, 7, 0 )
+tile_data = PoolIntArray( -393207, 24, 0, -327662, 26, 0, -262136, 0, 0, -262135, 2, 0, -262134, 1, 0, -262133, 2, 0, -262132, 3, 0, -196600, 28, 0, -196598, 29, 0, -196591, 0, 0, -196590, 3, 0, -131055, 30, 0, -65525, 0, 0, -65524, 1, 0, -65523, 3, 0, 6, 18, 0, 7, 21, 0, 11, 28, 0, 16, 27, 0, 65539, 22, 0, 65542, 4, 0, 65543, 10, 0, 65552, 0, 0, 65553, 3, 0, 196601, 1, 0, 131078, 6, 0, 131079, 7, 0 )
 
 [node name="TileSwamp" parent="." instance=ExtResource( 6 )]
 position = Vector2( 335, 164 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
-tile_data = PoolIntArray( 262150, 12, 0, 262151, 11, 0, 262160, 12, 0, 262161, 11, 0, 327682, 4, 0, 327686, 9, 0, 327687, 8, 0, 327690, 4, 0, 327696, 10, 0, 327697, 7, 0, 393222, 10, 0, 393223, 7, 0 )
+tile_data = PoolIntArray( 262150, 12, 0, 262151, 11, 0, 262160, 12, 0, 262161, 11, 0, 327682, 4, 0, 327686, 9, 0, 327687, 8, 0, 327690, 4, 0, 327696, 10, 0, 327697, 7, 0, 393222, 10, 0, 393223, 7, 0, 524299, 2, 0 )
 
 [node name="wall" type="StaticBody2D" parent="."]
 collision_mask = 0
@@ -231,21 +223,51 @@ shape = SubResource( 8 )
 position = Vector2( 701, 115 )
 scale = Vector2( 0.8, 1 )
 
+[node name="Enemy1" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 260, 308 )
+rotation = 3.14159
+
+[node name="Path2D" type="Path2D" parent="Enemy1"]
+curve = SubResource( 6 )
+
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 260, 251 )
 scale = Vector2( -1, 1 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 892, 250 )
+scale = Vector2( -1, 1 )
+moveX = -1
 
 [node name="Enemy3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 958, 17 )
 scale = Vector2( -1, 1 )
 
+[node name="Enemy4" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 811, 465 )
+rotation = -3.14159
+moveX = -1
+
+[node name="Path2D" type="Path2D" parent="Enemy4"]
+curve = SubResource( 6 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 637, 312 )
+rotation = -3.14159
+
+[node name="Path2D" type="Path2D" parent="Enemy5"]
+curve = SubResource( 6 )
+
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected" flags=6]
-[connection signal="coin_collected" from="Coins/Coin9" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected" flags=6]
-[connection signal="coin_collected" from="Coins/Coin7" to="HUD" method="_on_coin_collected" flags=6]
-[connection signal="coin_collected" from="Coins/Coin6" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin4" to="HUD" method="_on_coin_collected" flags=6]
-[connection signal="coin_collected" from="Coins/Coin8" to="HUD" method="_on_coin_collected" flags=6]
-[connection signal="coin_collected" from="Coins/Coin10" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin5" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin6" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin7" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin8" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin9" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin10" to="HUD" method="_on_coin_collected" flags=6]

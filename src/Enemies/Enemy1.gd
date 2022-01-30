@@ -2,11 +2,14 @@ extends KinematicBody2D
 
 var speed = 2
 var counter = 0
-var moveX = 1
+export var moveX = 1
 export var isQuiet = false
 
 func _ready():
-	$AnimatedSprite.flip_h = true
+	if moveX > 0:
+		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.flip_h = false
 
 func _on_playerDetector_body_entered(body):
 	if body.has_method("die"):

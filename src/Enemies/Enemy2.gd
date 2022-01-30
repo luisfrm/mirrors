@@ -5,11 +5,14 @@ var player = null
 var move = Vector2.ZERO
 var speed = 70
 export var characterName = "character"
+export var isQuiet = false
 
 func _ready():
 	pass
 
 func _physics_process(delta):
+	if isQuiet:
+		return
 	move = Vector2.ZERO
 	
 	if player != null:
@@ -28,7 +31,7 @@ func _on_detectPlayer_body_exited(body):
 	player = null
 	
 func fire():
-	if player:
+	if player and !isQuiet:
 		var bullet = BULLET_SCENE.instance()
 		bullet.player = player
 		bullet.position = get_global_position()

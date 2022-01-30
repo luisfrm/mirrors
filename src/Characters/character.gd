@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var _animated_sprite = $AnimatedSprite
 
 var isDead = false
+export var isQuiet = false
 var velocity: Vector2 = Vector2(0.0,0.0)
 var coins = 0
 var run_velocity = 200.0
@@ -22,6 +23,8 @@ func _ready():
 func _process(delta):
 	if isDead:
 		return
+	if isQuiet:
+		return
 	if Input.is_action_just_pressed("ui_select") and (is_on_floor()):
 		velocity.y = jump_speed
 		$SoundJump.play()
@@ -38,7 +41,6 @@ func _process(delta):
 	else:
 		_animated_sprite.animation = "idle"
 		velocity.x = 0.0
-		
 	
 func _physics_process(delta):
 	velocity.y += gravity * delta

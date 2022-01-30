@@ -3,6 +3,7 @@ extends KinematicBody2D
 var speed = 2
 var counter = 0
 var moveX = 1
+export var isQuiet = false
 
 func _ready():
 	$AnimatedSprite.flip_h = true
@@ -12,6 +13,8 @@ func _on_playerDetector_body_entered(body):
 		body.die()
 
 func _physics_process(delta):
+	if isQuiet:
+		return
 	var move = Vector2()
 	move.x += moveX
 	move = move.normalized() * speed

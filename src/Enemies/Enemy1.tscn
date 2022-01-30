@@ -20,7 +20,7 @@ animations = [ {
 extents = Vector2( 8.5, 13 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 12, 13.5 )
+extents = Vector2( 12, 16 )
 
 [node name="Enemy1" type="KinematicBody2D"]
 collision_layer = 4
@@ -41,7 +41,6 @@ collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerDetector"]
 modulate = Color( 0.0666667, 0.0745098, 0.0666667, 1 )
-position = Vector2( 0, 2.5 )
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="playerDetector" to="." method="_on_playerDetector_body_entered"]

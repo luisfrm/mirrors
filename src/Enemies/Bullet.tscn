@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/sprites/Fruits/Orange.png" type="Texture" id=1]
 [ext_resource path="res://src/Enemies/Bullet.gd" type="Script" id=2]
@@ -99,13 +99,25 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=19]
 radius = 7.07107
 
+[sub_resource type="CircleShape2D" id=20]
+radius = 8.0
+
 [node name="Bullet" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 18 )
-frame = 1
+frame = 9
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 19 )
+
+[node name="attack" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+modulate = Color( 0, 0, 0, 1 )
+shape = SubResource( 20 )
+
+[connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]

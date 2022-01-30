@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var coins = 0
+export var coins_to_win = 10
 onready var Coins = $Coins
 
 onready var LEVEL_FINISHED = preload("res://src/scenes/level_finished.tscn")
@@ -13,7 +14,7 @@ func _on_coin_collected():
 	coins += 1
 	update_coins()
 	
-	if coins == 10:
+	if coins == coins_to_win:
 		if (get_parent().get_node("Character")):
 			get_parent().get_node("Character").isQuiet = true
 		if (get_parent().get_node("Character2")):
@@ -27,4 +28,5 @@ func _on_coin_collected():
 		get_parent().add_child(levelFinished)
 
 func update_coins():
+	print("TEST")
 	Coins.text = String(coins)

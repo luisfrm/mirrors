@@ -5,6 +5,7 @@ signal coin_collected
 onready var _animated_sprite = $AnimatedSprite
 
 func _on_coin_body_entered(body):
+	$SoundCoin.play()
 	_animated_sprite.animation = "collected"
 	emit_signal("coin_collected")
 

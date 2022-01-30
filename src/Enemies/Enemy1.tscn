@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Enemies/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://assets/items/enemy-run_idle_jump.png" type="Texture" id=2]
@@ -8,9 +8,44 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 48, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 64, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 80, 16, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 1 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -20,7 +55,7 @@ animations = [ {
 extents = Vector2( 8.5, 13 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 12, 16 )
+extents = Vector2( 12, 13.5 )
 
 [node name="Enemy1" type="KinematicBody2D"]
 collision_layer = 4

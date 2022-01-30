@@ -59,4 +59,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="."]
+
+[connection signal="button_down" from="tryAgain_Button" to="." method="_on_tryAgain_Button_button_down"]
 [connection signal="pressed" from="tryAgain_Button" to="." method="_on_tryAgain_Button_pressed"]

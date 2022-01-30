@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sprites/Ninja Frog/Jump (32x32).png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/Ninja Frog/Idle (32x32).png" type="Texture" id=4]
 [ext_resource path="res://assets/music/jump1.ogg" type="AudioStream" id=5]
-[ext_resource path="res://assets/music/dead.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/music/SapitoSeMurio.ogg" type="AudioStream" id=6]
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
@@ -186,7 +186,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 15 )
 animation = "idle"
-frame = 1
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

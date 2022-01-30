@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Orbitron-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/scenes/PlayButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/items/arrow_button.jpg" type="Texture" id=3]
+[ext_resource path="res://src/scenes/MainMenu.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -38,6 +39,7 @@ bg_color = Color( 1, 1, 1, 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -63,10 +65,10 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 592.0
-margin_top = 261.0
-margin_right = 848.0
-margin_bottom = 325.0
+margin_left = 608.0
+margin_top = 384.0
+margin_right = 864.0
+margin_bottom = 448.0
 custom_colors/font_color_hover = Color( 0.298039, 0.141176, 0.141176, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "PLAY!"

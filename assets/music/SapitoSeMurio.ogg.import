@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SapitoSeMurio.ogg-e8838837ffa350a362243d09cacd0a6f.oggstr"
+
+[deps]
+
+source_file="res://assets/music/SapitoSeMurio.ogg"
+dest_files=[ "res://.import/SapitoSeMurio.ogg-e8838837ffa350a362243d09cacd0a6f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -18,6 +18,10 @@ config/name="mirrors"
 run/main_scene="res://src/scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+MusicController="*res://src/MusicController.tscn"
+
 [input]
 
 test_key={

@@ -24,6 +24,7 @@ func _process(delta):
 		return
 	if Input.is_action_just_pressed("ui_select") and (is_on_floor()):
 		velocity.y = jump_speed
+		$SoundJump.play()
 	elif !is_on_floor():
 		_animated_sprite.animation = "jump"
 	if Input.is_action_pressed("ui_right"):
@@ -48,6 +49,7 @@ func add_coin():
 	print("Coins:", coins)
 
 func die():
+	$SoundDead.play()
 	isDead = true
 	$AnimationPlayer.play("die")
 	_animated_sprite._set_playing(false)

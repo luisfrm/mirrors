@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/sprites/Fruits/Collected.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/Fruits/Apple.png" type="Texture" id=2]
 [ext_resource path="res://src/Objects/Coin/Coin.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/Fruits/appleIdle.tres" type="Texture" id=4]
+[ext_resource path="res://assets/music/confirmation_002.ogg" type="AudioStream" id=5]
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
@@ -139,11 +140,14 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 24 )
-frame = 15
+frame = 16
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 25 )
+
+[node name="SoundCoin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

@@ -1,17 +1,15 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/sprites/Fruits/appleIdle.tres" type="Texture" id=1]
 [ext_resource path="res://src/Enemies/Thorns.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Background pixel art.png" type="Texture" id=3]
 [ext_resource path="res://assets/TileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Coin/Coin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/Orbitron-Black.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://src/Characters/character.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/TileSwamp.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Enemies/Mushroom.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Enemies/Enemy1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://HUD.gd" type="Script" id=11]
-[ext_resource path="res://assets/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="PhysicsMaterial" id=7]
 
@@ -23,12 +21,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 12 )
-
-[sub_resource type="DynamicFont" id=9]
-font_data = ExtResource( 6 )
 
 [sub_resource type="Curve2D" id=4]
 _data = {
@@ -91,7 +83,7 @@ script = ExtResource( 11 )
 modulate = Color( 0, 0, 0, 0.352941 )
 margin_left = 20.0
 margin_top = 13.0
-margin_right = 96.0
+margin_right = 89.0
 margin_bottom = 53.0
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
@@ -109,11 +101,10 @@ __meta__ = {
 }
 
 [node name="x" type="Label" parent="HUD"]
-margin_left = 49.0
-margin_top = 21.0
-margin_right = 64.0
-margin_bottom = 42.0
-custom_fonts/font = SubResource( 8 )
+margin_left = 50.0
+margin_top = 26.0
+margin_right = 61.0
+margin_bottom = 40.0
 text = "x "
 align = 1
 __meta__ = {
@@ -121,11 +112,10 @@ __meta__ = {
 }
 
 [node name="Coins" type="Label" parent="HUD"]
-margin_left = 65.0
-margin_top = 21.0
-margin_right = 91.0
-margin_bottom = 42.0
-custom_fonts/font = SubResource( 9 )
+margin_left = 62.0
+margin_top = 26.0
+margin_right = 86.0
+margin_bottom = 40.0
 text = "##"
 align = 1
 __meta__ = {
@@ -137,11 +127,6 @@ position = Vector2( 30.5442, -11.0883 )
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 5 )]
 position = Vector2( 376.456, 175.088 )
-collision_layer = 8
-collision_mask = 2
-
-[node name="Coin9" parent="Coins" instance=ExtResource( 5 )]
-position = Vector2( 97.4558, 262.088 )
 collision_layer = 8
 collision_mask = 2
 
@@ -175,13 +160,6 @@ collision_mask = 2
 [node name="Coin8" parent="Coins" instance=ExtResource( 5 )]
 modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
 position = Vector2( 639.456, 319.088 )
-scale = Vector2( 1, -1 )
-collision_layer = 8
-collision_mask = 2
-
-[node name="Coin10" parent="Coins" instance=ExtResource( 5 )]
-modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
-position = Vector2( 872.456, 318.088 )
 scale = Vector2( 1, -1 )
 collision_layer = 8
 collision_mask = 2
@@ -237,12 +215,10 @@ position = Vector2( 526, 118 )
 scale = Vector2( 0.8, 1 )
 
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected" flags=6]
-[connection signal="coin_collected" from="Coins/Coin9" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin7" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin6" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin4" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin8" to="HUD" method="_on_coin_collected" flags=6]
-[connection signal="coin_collected" from="Coins/Coin10" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin5" to="HUD" method="_on_coin_collected" flags=6]

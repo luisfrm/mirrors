@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Orbitron-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/scenes/PlayButton.gd" type="Script" id=2]
@@ -26,7 +26,11 @@ font_data = SubResource( 3 )
 content_margin_left = 60.0
 content_margin_top = 15.0
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 1, 1, 1, 1 )
@@ -72,10 +76,10 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 100.0
-margin_top = 202.0
-margin_right = 380.0
-margin_bottom = 274.0
+margin_left = 98.0
+margin_top = 242.0
+margin_right = 378.0
+margin_bottom = 314.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
@@ -87,13 +91,17 @@ __meta__ = {
 
 [node name="PlayButton2" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 466.0
+margin_top = 458.0
 margin_right = 419.0
 margin_bottom = 530.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-custom_styles/hover = SubResource( 6 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
 custom_styles/normal = SubResource( 7 )
 text = "Space bar"
 __meta__ = {

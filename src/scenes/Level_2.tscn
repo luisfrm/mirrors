@@ -194,7 +194,7 @@ collision_mask = 2
 
 [node name="Enemy1" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
-position = Vector2( 710, 307 )
+position = Vector2( 260, 308 )
 scale = Vector2( -1, -1 )
 
 [node name="Path2D" type="Path2D" parent="Enemy1"]
@@ -232,11 +232,12 @@ position = Vector2( 701, 115 )
 scale = Vector2( 0.8, 1 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 706, 250 )
+position = Vector2( 260, 251 )
 scale = Vector2( -1, 1 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 344, 168 )
+position = Vector2( 958, 17 )
+scale = Vector2( -1, 1 )
 
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin9" to="HUD" method="_on_coin_collected" flags=6]

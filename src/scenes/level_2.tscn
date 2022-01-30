@@ -1,0 +1,256 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://src/Characters/character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+[ext_resource path="res://src/Objects/Coin/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Enemies/Enemy1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Enemies/Mushroom.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/TileSwamp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/Background pixel art.png" type="Texture" id=8]
+[ext_resource path="res://src/Enemies/Thorns.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/TileMap.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/Orbitron-Black.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/sprites/Fruits/appleIdle.tres" type="Texture" id=12]
+[ext_resource path="res://src/Enemies/Enemy2.tscn" type="PackedScene" id=13]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1829.52, 12 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 11 )
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 319 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 522.5, 10 )
+
+[node name="level_2" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -1.0
+margin_top = -20.0
+margin_right = 1023.0
+margin_bottom = 580.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" parent="TextureRect" instance=ExtResource( 9 )]
+position = Vector2( 135, 472 )
+scale = Vector2( 0.9, 1 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, 252 )
+collision_mask = 11
+
+[node name="Character2" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 63, 308 )
+scale = Vector2( 1, -1 )
+flip = -1.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -1, 276 )
+physics_material_override = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 511.217, 281.737 )
+rotating = true
+current = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+modulate = Color( 0, 0, 0, 0.352941 )
+margin_left = 20.0
+margin_top = 13.0
+margin_right = 96.0
+margin_bottom = 53.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 18.0
+margin_top = 18.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 49.0
+margin_top = 21.0
+margin_right = 64.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 4 )
+text = "x "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="HUD"]
+margin_left = 65.0
+margin_top = 21.0
+margin_right = 91.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 5 )
+text = "##"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Node2D" parent="."]
+position = Vector2( 30.5442, -11.0883 )
+
+[node name="Coin1" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 87.4558, 91.0883 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 61.4558, 108.088 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 120.456, 78.0883 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 225.456, 47.0883 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 154.456, 80.0883 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 188.456, 62.0883 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 3 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 50.4558, 526.088 )
+scale = Vector2( 1, -1 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 3 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 90.4558, 538.088 )
+scale = Vector2( 1, -1 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 3 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 136.456, 541.088 )
+scale = Vector2( 1, -1 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 3 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 11.4558, 494.088 )
+scale = Vector2( 1, -1 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Enemy1" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.27451, 0.309804, 0.552941, 1 )
+position = Vector2( 276, 309 )
+scale = Vector2( -1, -1 )
+
+[node name="Path2D" type="Path2D" parent="Enemy1"]
+curve = SubResource( 6 )
+
+[node name="TileMap" parent="." instance=ExtResource( 10 )]
+position = Vector2( 335, 172 )
+cell_size = Vector2( 32, 32 )
+collision_mask = 0
+tile_data = PoolIntArray( -393207, 24, 0, -327662, 26, 0, -262136, 0, 0, -262135, 2, 0, -262134, 1, 0, -262133, 2, 0, -262132, 3, 0, -196600, 28, 0, -196598, 29, 0, -196591, 0, 0, -196590, 3, 0, -131055, 30, 0, -65525, 0, 0, -65524, 1, 0, -65523, 3, 0, 11, 28, 0, 16, 27, 0, 65552, 0, 0, 65553, 3, 0 )
+
+[node name="TileSwamp" parent="." instance=ExtResource( 6 )]
+position = Vector2( 335, 164 )
+cell_size = Vector2( 32, 32 )
+collision_mask = 0
+
+[node name="wall" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2( -11, 280.5 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="wall"]
+position = Vector2( 1034, 279 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall"]
+position = Vector2( 502.5, 592 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="wall"]
+position = Vector2( 501, -30 )
+shape = SubResource( 8 )
+
+[node name="Mushroom" parent="." instance=ExtResource( 5 )]
+position = Vector2( 708, 115 )
+scale = Vector2( 0.8, 1 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 277, 246 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 471, 172 )
+scale = Vector2( -1, 1 )
+characterName = "Character"
+
+[connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin9" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin7" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin6" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin4" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin8" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin10" to="HUD" method="_on_coin_collected" flags=6]
+[connection signal="coin_collected" from="Coins/Coin5" to="HUD" method="_on_coin_collected" flags=6]

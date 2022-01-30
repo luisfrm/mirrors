@@ -5,11 +5,11 @@ onready var _animated_sprite = $AnimatedSprite
 var isDead = false
 var velocity: Vector2 = Vector2(0.0,0.0)
 var coins = 0
-var run_velocity = 300.0
+var run_velocity = 200.0
 export(float) var flip = 1.0
 
 export(float) var time_to_peak = 0.6 # seconds
-export(float) var jump_height = 100.0 # pixels
+export(float) var jump_height = 80.0 # pixels
 
 onready var gravity = flip * (2.0*jump_height / pow(time_to_peak, 2.0))
 onready var jump_speed = -gravity * time_to_peak 

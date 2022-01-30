@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HUD.gd" type="Script" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://assets/TileMap.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/Orbitron-Black.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://assets/sprites/Fruits/appleIdle.tres" type="Texture" id=12]
-[ext_resource path="res://src/Enemies/Enemy2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -55,7 +54,7 @@ __meta__ = {
 }
 
 [node name="StaticBody2D" parent="TextureRect" instance=ExtResource( 9 )]
-position = Vector2( 900, 339 )
+position = Vector2( 975, 347 )
 scale = Vector2( 0.9, 1 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
@@ -135,12 +134,12 @@ __meta__ = {
 position = Vector2( 30.5442, -11.0883 )
 
 [node name="Coin1" parent="Coins" instance=ExtResource( 3 )]
-position = Vector2( 87.4558, 91.0883 )
+position = Vector2( 931.456, 174.088 )
 collision_layer = 8
 collision_mask = 2
 
 [node name="Coin9" parent="Coins" instance=ExtResource( 3 )]
-position = Vector2( 61.4558, 108.088 )
+position = Vector2( 716.456, 130.088 )
 collision_layer = 8
 collision_mask = 2
 
@@ -160,7 +159,7 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 3 )]
-position = Vector2( 188.456, 62.0883 )
+position = Vector2( 187.456, 65.0883 )
 collision_layer = 8
 collision_mask = 2
 
@@ -204,12 +203,13 @@ curve = SubResource( 6 )
 position = Vector2( 335, 172 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
-tile_data = PoolIntArray( -393207, 24, 0, -327662, 26, 0, -262136, 0, 0, -262135, 2, 0, -262134, 1, 0, -262133, 2, 0, -262132, 3, 0, -196600, 28, 0, -196598, 29, 0, -196591, 0, 0, -196590, 3, 0, -131055, 30, 0, -65525, 0, 0, -65524, 1, 0, -65523, 3, 0, 11, 28, 0, 16, 27, 0, 65552, 0, 0, 65553, 3, 0 )
+tile_data = PoolIntArray( -393207, 24, 0, -327662, 26, 0, -262136, 0, 0, -262135, 2, 0, -262134, 1, 0, -262133, 2, 0, -262132, 3, 0, -196600, 28, 0, -196598, 29, 0, -196591, 0, 0, -196590, 3, 0, -131055, 30, 0, -65525, 0, 0, -65524, 1, 0, -65523, 3, 0, 6, 18, 0, 7, 21, 0, 11, 28, 0, 16, 27, 0, 65539, 22, 0, 65542, 4, 0, 65543, 10, 0, 65552, 0, 0, 65553, 3, 0, 131078, 6, 0, 131079, 7, 0 )
 
 [node name="TileSwamp" parent="." instance=ExtResource( 6 )]
 position = Vector2( 335, 164 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
+tile_data = PoolIntArray( 262150, 12, 0, 262151, 11, 0, 262160, 12, 0, 262161, 11, 0, 327682, 4, 0, 327686, 9, 0, 327687, 8, 0, 327690, 4, 0, 327696, 10, 0, 327697, 7, 0, 393222, 10, 0, 393223, 7, 0 )
 
 [node name="wall" type="StaticBody2D" parent="."]
 collision_mask = 0
@@ -227,17 +227,12 @@ position = Vector2( 502.5, 592 )
 shape = SubResource( 8 )
 
 [node name="Mushroom" parent="." instance=ExtResource( 5 )]
-position = Vector2( 708, 115 )
+position = Vector2( 701, 115 )
 scale = Vector2( 0.8, 1 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 706, 250 )
 scale = Vector2( -1, 1 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 468, 173 )
-scale = Vector2( -1, 1 )
-collision_mask = 5
 
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected" flags=6]
 [connection signal="coin_collected" from="Coins/Coin9" to="HUD" method="_on_coin_collected" flags=6]

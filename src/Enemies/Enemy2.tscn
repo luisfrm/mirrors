@@ -136,7 +136,7 @@ animations = [ {
 extents = Vector2( 10.5, 13.5 )
 
 [sub_resource type="CircleShape2D" id=27]
-radius = 274.117
+radius = 269.002
 
 [node name="Enemy2" type="KinematicBody2D"]
 collision_layer = 4
@@ -148,7 +148,6 @@ position = Vector2( -10, 15.25 )
 scale = Vector2( 1, 1.01563 )
 frames = SubResource( 24 )
 animation = "idle"
-frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
